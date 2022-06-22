@@ -1,0 +1,103 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/* body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  background-size: 100% 100%;
+  opacity: 2.2;
+  background-color: black;
+} */
+.wrapper{
+    min-width: 100%;
+    background-color: #f57c7c85;
+}
+.container{
+    display: flex;
+}
+.imgContainer img{
+    width: 107vh;
+}
+.ddBtnContainer {
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+    /* margin-top: 16vh; */
+    margin-bottom: 14vh;
+}
+.textRaj{
+    position: absolute;
+    /* background-color: #673ab785; */
+    border: none;
+    /* border-radius: 2vh; */
+    /* height: 22vh; */
+    /* width: 68vh; */
+    /* text-align: center; */
+    top: 37%;
+    left: 8%;
+    /* box-shadow: 2px 3px 8px 3px darkorchid;*/
+    
+}
+.textRaj h1{
+    font-size: 17vh;
+    /* position: absolute; */
+    /* margin-bottom: -10vh; */
+    color: white;
+    text-shadow: -6px 3px 2px black;
+    /* margin-top: 22px;*/
+}
+.drop{
+       /* height: 15vh; */
+       display: flex;
+       flex-direction: column;
+       width: 59vh;
+       height: 41vh;
+       /* background: antiquewhite; */
+       justify-content: space-evenly;
+       margin-left: 21vh;
+       background-color: #342e2e40;
+       padding: 4vh;
+       border-radius: 2vh;
+}
+/* dd */
+label{
+
+    font-size: 5vh;
+    color: white;
+    text-shadow: 1 0 black;
+    text-shadow: -2px 1px 1px black;
+    margin-bottom: 0.1vh;
+}
+select{
+        padding: 0.2vh;
+        /* background-color: #ffe6e6; */
+        /* color: white; */
+        border: none;
+        border-radius: 1.2vh;
+        margin-bottom: 4vh;
+        font-size: 2.7vh;
+}
+.btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6vh;
+    margin-left: 19vh;
+}
+.btn button{
+    padding: 1.3vh;
+    width: 30vh;
+    border-radius: 1.07vh;
+    border: none;
+    margin: 0.85vh;
+    font-size: 3.5vh;
+    background-color: #fffffb;
+    box-shadow: -3px 2px 3px 3px darkred;
+}
+.btn button:hover{
+    background-color: #dc717175;
+    color: white;
+    cursor: pointer;
+}

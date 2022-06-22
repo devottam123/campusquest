@@ -1,0 +1,324 @@
+html,body{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    min-height: 100%;
+}
+body{
+    background-color: #193e4b;
+}
+
+#kk{
+    margin: 20px 0px 10px 0px;
+    padding: 10px 0px 0px 0px;
+    margin-bottom: 20px;
+    
+}
+.wrapper{
+    min-width: 100%;
+}
+
+header{
+    border-bottom-right-radius: 31px;
+    width: 100%;
+    background-color: gradient;
+    /* background-color: #3e3152;  */
+    background: linear-gradient(1deg, #5fa59c, #8eb32a00);
+   /* position:fixed; */
+    border-radius: 10px;
+}
+.headerBlock{
+    display: flex;
+    min-width: 100%;
+margin-bottom: 8px;
+}
+/* .container{
+    max-width: 1500px;
+    margin: auto;
+} */
+/*for logo and navigation*/
+.container1{
+    display: flex;
+    /* min-width: 68%; */
+    flex-basis: 75%;
+}
+.logoHeader {
+    width: 10%;
+}
+.logoHeader a{
+     display: block;
+     height: 60px; 
+   
+}
+.logoHeader img {
+       margin-left: 11px;
+       margin-top: 7px;
+       max-width: 59%;
+       size: 20px;
+       width: 50px;
+       height: 45px;
+}
+/* img{
+} */
+nav.navBar {
+    width: 70%;
+    margin: 6px -5px 6px 4px;
+}
+.navUl {
+    display: flex;
+    list-style: none;
+    margin-top: 9px;
+    /* justify-content: space-evenly; */
+}
+/* .navUl li {
+    margin: 12px;
+} */
+.navUl li{
+    margin-left: 26px;
+}
+.navUl li a{
+     text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 21px;
+}
+.navUl li a:hover {
+    background-color: #fdfdfd;
+    color: black;
+    padding: 3px;
+    border-radius: 10px;
+    transition: 0.3s;
+   
+}
+/*For search and login/Up*/
+.container2{
+    display: inline-flex;
+    /* min-width: 30%; */
+    flex-direction: column-reverse;
+    flex-basis: 30%;
+}
+/* LoginUp Buttons */
+.btnContainer {
+        /* height: 37px; */
+        display: flex;
+        align-items: center;
+        /* margin: auto; */
+        flex-direction: row-reverse;
+        /* margin-bottom: 12px; */
+        flex-basis: 100%;
+    }
+
+.btn{
+    margin: 6px;
+    padding: 10px 20px;
+    background-color: #f8f9fc;
+    color: #121111;
+    font-family: Poppins, sans-serif;
+    border: none;
+    border-radius: 12px;
+    /* width: 23%; */
+    min-width: 29%;
+    height: 38px;
+}
+
+.btn:hover{
+
+background-color: #76b2f7;
+
+color: #ffffff;
+cursor: pointer;
+border: wheat;
+transition: 0.35s;
+}
+.sliderContent{
+    position: relative;
+    background: linear-gradient(1deg,#54b0d1,white );
+    background: linear-gradient(1deg, #5fa59c, #8eb32a00);
+    background: beige;
+    padding: 10px;
+    font-family: "Open Sans", sans-serif;
+    width: 60%;
+    /* margin: 22px 23px -165px 330px; */
+    margin: auto ;
+    border-radius: 12px;
+    margin-bottom: -277px;
+    margin-top: 60px;
+    z-index: 2;
+    /* opacity: .6; */
+    justify-content: center;
+    background-color: #cdf2e3a6;
+    border-radius: 12px;
+    align-items: center;
+}
+.sliderContent h1 {
+    text-align: center;
+    font-family: 'Gistesy', sans-serif;
+    font-size: 65px;
+    color: #170223;
+    /* margin: 40px 0px 40px 0px; */
+    /* text-shadow: -3px 4px 3px #ee69ca; */
+    text-shadow: -3px 4px 3px mintcream;
+}
+
+.sliderContent p{
+    /* margin: 40px 0px 40px 0px; */
+    text-align: center;
+    font-family: muli,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: #000000;
+    /* text-shadow: -3px 2px 3px #b9df70; */
+    
+}
+
+/* Slider starts */
+/* Button for tour */
+.tourBtn{
+    /* line-height: 2.3; */
+    /* background-color: #898fa3; */
+    margin-top: 1%;
+    width: 181px;
+    margin: auto;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
+.tourBtn button{
+    padding: 15px;
+    margin: 21px 20px -13px 5px;
+    /* color: #3d5a80; */
+    font-weight: bolder;
+    font-size: 18px;
+    color: #050506;
+    font-family: Poppins, sans-serif;
+    width: 170px;
+    height: 60px;
+    background:linear-gradient(1deg, #41c9b7, white);
+    /* border: 2px solid rgb(228, 73, 73); */
+    border-radius: 16px;
+    /* box-shadow: -2px 7px 11px 2px rgb(208 14 14); */
+    
+}
+.tourBtn button:hover{
+    /* background-color: white; */
+    background: #76b2f7;
+    color: white;
+    cursor: pointer;
+    transition: 0.6s;
+}
+.tett{
+    /* font-family: Poppins, sans-serif; */
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.text{
+    background: linear-gradient(1deg, #41c9b7, white);
+    margin-top: 35px;
+    border-radius: 20px;
+}
+.textt{
+    font-size: 20px;
+    text-align: center;
+    padding-top: 26px;
+    padding-bottom: 23px;
+    color: black;
+    font-family: Poppins, sans-serif;
+    margin-bottom: 20px;
+    margin: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width:90%;
+
+
+}
+/* mapHeader */
+.mapHeader{
+    line-height: 2.3;
+    background-color: #898fa3;
+    margin-top: 12%;
+    width: 100%;
+    margin: auto;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
+.mapHeader h2{
+    text-align: center;
+    width: auto;
+    margin: 40px 100px;
+    padding:  0px 100px 0px 100px;
+    border-radius: 30px;
+}
+/* Map here */
+/* .mapIndia{
+    height: 170px;
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: #CDCDCD;
+    border: 2px solid #CDCDCD;
+    background-image: url('https://images.unsplash.com/photo-1507919909716-c8262e491cde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
+    background-repeat: no-repeat;
+    background-size: 100%;
+  } */
+  /* #map {
+    background-image: none;
+  } */
+/* .mapIndia {
+    display: flex;
+    justify-content: center;
+    margin-top: 37px;
+}*/
+svg rect{
+    fill: #1a053a;
+    stroke: #faf9f2;
+    stroke-width: 1.6px;
+}
+
+/*
+svg path:hover{
+    fill: #312d2d;
+    transition: 0.6s;
+    cursor: pointer;
+    stroke: #ccae1a;
+}  */
+#map{
+    margin: auto;
+}
+/* names of states */
+.state{
+    background-color: wheat;
+    color: white;
+}
+/* Footer here */
+.footContainer{
+    display: flex;
+    background-color: grey;
+    border-top-left-radius: 31vh;
+    border: none;
+}
+.teams img{
+    border: none;
+    width: 6%;
+    border-radius: 7vh;
+}
+.nav{
+    margin-left: 21px;
+}
+.icons{
+    margin-left: 21px;
+}
+.states{
+    margin-left: 21px;
+}
+.teams{
+    margin-left: 21px;
+}
+.copywrite{
+    padding: 12px;
+    /* background-color: black; */
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin-bottom: -20px;
+}
+
