@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Campus Quest | Home</title>
+    <link rel="icon" type="image/cmps.png" href="Images/Logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/hh.css">
+    <link href="http://fonts.cdnfonts.com/css/gistesy" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/lvp0tlb.css">           
+    <!-- <link rel="stylesheet" href="css/index2NEW.css"> -->
+    <!-- <link rel="stylesheet" href="css/newslider.css"> -->
+    <script src="js/file.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style media="screen">
+    
+      /* body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: #e3f9f6;
+      } */
+      @import url('http://fonts.cdnfonts.com/css/gistesy');
+      .slider{
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+        height: 450px;
+       z-index: 1;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+        margin: auto;
+        margin-top: 80px;
+      }
+      
+      .slides{
+        width: 500%;
+        height: 350px;
+        display: flex;
+      }
+      
+      .slides input{
+        display: none;
+      }
+      
+      .slide{
+        width: 20%;
+        transition: 2s;
+      }
+      
+      .slide img{
+        width: 100%;
+        height: 450px;
+      }
+      
+      /*css for manual slide navigation*/
+      
+      .navigation-manual{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: -40px;
+        margin: auto;
+        margin-top: 3%;
+      }
+      
+      .manual-btn{
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+        border: 2.5px solid #41c9b7;
+        padding: 5px;
+        width: 10px;
+      }
+      
+      .manual-btn:not(:last-child){
+        margin-right: 40px;
+      }
+      
+      .manual-btn:hover{
+        background: #41c9b7;
+      }
+      
+      #radio1:checked ~ .first{
+        margin-left: 0;
+      }
+      
+      #radio2:checked ~ .first{
+        margin-left: -20%;
+      }
+      
+      #radio3:checked ~ .first{
+        margin-left: -40%;
+      }
+      
+      #radio4:checked ~ .first{
+        margin-left: -60%;
+      }
+      
+      /*css for automatic navigation*/
+      
+      .navigation-auto{
+        position: absolute;
+        justify-content: center;
+        margin-top: 460px;
+        display: flex;
+        width: 800px;
+      }
+      
+      .navigation-auto div{
+        border-radius: 10px;
+        transition: 1s;
+        border: 3px solid #c43af3;
+        padding: 5px;
+        width: 30px;
+      }
+      
+      .navigation-auto div:not(:last-child){
+        margin-right: 40px;
+      }
+      
+      #radio1:checked ~ .navigation-auto .auto-btn1{
+        background: #c43af3;
+      }
+      
+      #radio2:checked ~ .navigation-auto .auto-btn2{
+       
+        background: #c43af3;
+      }
+      
+      #radio3:checked ~ .navigation-auto .auto-btn3{
+        background: #c43af3;
+      }
+      
+      #radio4:checked ~ .navigation-auto .auto-btn4{
+        background: #c43af3;
+      }
+      
+    </style>
+       
+    <!-- Import Mapbox GL JS  -->
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <link
+    href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+    rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        width: 650px;
+        height: 700px;
+        z-index: 1;
+        ;
+      }
+      .take{
+        position: relative;
+        margin: auto;
+        
+      }
+       .divesh{
+         position: relative;
+         width: 750px;
+         margin: auto;
+         margin-bottom: 60px;
+        margin-top: 4%;
+       }
+       .dives{
+         /* position: relative; */
+         max-width: 100%;
+         margin: auto;
+         /* margin-bottom: 60px; */
+        
+       }
+       #lol{
+         width: 100%;
+       }
+      /* #marker37 {
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .mapboxgl-popup {
+        max-width: 200px;
+      } */
+    </style>
+
+	<style>
+		html{
+				scroll-behavior: smooth;
+			}
+	</style>
+
+</head>
+
+<body>
+  <style>
+    /* #lol{
+      max-width: 1400px;
+    margin: auto;
+    } */
+  </style>
+    
+    <header>
+   
+            <div class="container">
+              <div class="headerBlock">
+                <!-- Container--1 -->
+                <div class="container1">
+                  <div class="logoHeader">
+                    <a href="index.html"><img src="Image/Logo.png" alt="logo"></a>
+                  </div>
+                  <nav class="navBar">
+                    <ul class="navUl">
+                      <li><a href="index.html" class="active">Home</a></li>
+                      <li><a href="teamFinal.html">About Us</a></li>
+                      <li><a href="cont.html">Contact Us</a></li>
+                      <!-- <li><a href="Project 2/index2.html">Ask Your Queries</a></li> -->
+                    </ul>
+                  </nav>
+                </div>
+                <div class="container2">
+                
+                  <div class="btnContainer">
+                    <a href="login.php"><button class="btn" id="btn1">Login</button></a>
+                    <a href="signup.php"><button class="btn" id="btn2" >Sign Up</button></a>
+                  </div>
+                </div>
+                <!-- Container-2 -->
+              </div>
+            </div>
+          </header>
+            <!-- </header> -->
+            <div id="lol">
+            <style>
+              .hello{
+                position: relative;
+                /* width: 750px; */
+                margin: auto;
+                margin-top: 90px;
+                width: 100%; 
+                
+              } 
+              </style>
+           <div class="wrapper">
+         <div class="hello"> 
+          <!--image slider start-->
+          <div class="sliderContent">
+           <h1>Campus Quest!</h1>
+           <p>Steer Visit, Steer Clear!</p>
+           <!-- <p>"Discovering colleges made easy"</p> -->
+       </div>
+          <div class="slider">
+            <div class="slides">
+             <!--radio buttons start-->
+               <input type="radio" name="radio-btn" id="radio1">
+               <input type="radio" name="radio-btn" id="radio2">
+               <input type="radio" name="radio-btn" id="radio3">
+               <input type="radio" name="radio-btn" id="radio4">
+             <!--radio buttons end-->
+             <style>
+              
+             </style>
+             <!--slide images start-->
+             <div class="slide first">
+             <img src="https://www.constructionweekonline.in/cloud/2021/11/24/Kl6SWhqw-IIT-ISM-Dhanbad-1.png" alt="">
+            </div>
+            <div class="slide ">
+              <img src="https://iisc.ac.in/wp-content/uploads/2021/01/13-768x256.jpg" alt="">
+            </div>
+            <div class="slide">
+              <img src="https://static.theprint.in/wp-content/uploads/2020/07/AIIMS-2.jpg?compress=true&quality=80&w=376&dpr=2.6" alt="">
+           </div>
+            <div class="slide">
+               <img src="http://chaibisket.com/wp-content/uploads/2017/12/1.-isb-hyd.jpg" alt="">
+            </div>
+            <!--slide images end-->
+          
+           
+           <!--automatic navigation end-->
+           </div>
+          
+           <!--manual navigation start-->
+            <div class="navigation-manual">
+              <label for="radio1" class="manual-btn"></label>
+              <label for="radio2" class="manual-btn"></label>
+              <label for="radio3" class="manual-btn"></label>
+              <label for="radio4" class="manual-btn"></label>
+            </div>
+           <!--manual navigation end-->
+          </div> 
+          <!--image slider end-->
+          
+          
+              <script type="text/javascript">
+          
+          var counter = 1;
+           setInterval(function(){
+             document.getElementById('radio' + counter).checked = true;
+             if(counter > 4){
+               counter = 1;
+               counter++;
+               }
+           }, 5000);
+          
+              </script>
+</div>
+
+      <!-- lo -->
+            <div class="tourBtn"><a href="#section1"><button>Start Tour Now</button></a></div>
+            <!-- <marquee behavior="" direction="left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda -->
+            <!-- vel qui obcaecati autem quia amet aliquam, maxime ipsa cum nisi fuga</marquee> -->
+            <!-- map heading -->
+            <div class="text">
+              <!-- <h1 class="textt">Welcome To Campus Quest!</h1> -->
+              <p class="textt">Welcome to Campus Quest! Campus Quest is a website that helps in selecting the right college for students. With Campus Quest, you can take virtual campus tours to learn about the college or university's facilities. It's a time saving and pocket friendly tool for the prospective students and their parents ensuring that they get the best college .</p>
+            </div>
+            <div class="mapHeader" id="section1">
+                <h2>Select the state from which you want to start the tour</h2>
+                <!-- map container section begins -->
+                <section class="mapContainer">
+                </div>
+                <div class="mapIndia">
+                    <!-- MAP Starts here -->
+                    <style>
+                        #menu {
+                          position:relative;
+                          background: #efefef;
+                          padding: 10px;
+                          font-family: "Open Sans", sans-serif;
+                          width: 380px;
+                          margin: 0px 0px -44px 50px;
+                          z-index: 2;
+                          /* box-sizing: border-box; */
+                        }
+                        </style>
+                  
+                  <!-- Load the `mapbox-gl-geocoder` plugin. -->
+                  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+                  <link rel="stylesheet" href="css/mapbox1colleges.css" type="text/css" />
+                  
+                  <div class="divesh">
+                    <div id="menu">
+                      <input
+                          id="satellite-streets-v9"
+                          type="radio"
+                          name="rtoggle"
+                          value="satellite"
+                          checked="checked"
+                          />
+                          <!-- See a list of Mapbox-hosted public styles at -->
+                          <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
+                          <label for="satellite-streets-v9">Satellite</label>
+                          <input id="light-v10" type="radio" name="rtoggle" value="light" />
+                          <label for="light-v10">Light</label>
+                          <input id="dark-v10" type="radio" name="rtoggle" value="dark" />
+                          <label for="dark-v10">Dark</label>
+                          <input id="streets-v11" type="radio" name="rtoggle" value="streets" />
+                          <label for="streets-v11">Streets</label>
+                          <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors" />
+                          <label for="outdoors-v11">Outdoors</label>
+                        </div>
+                        
+                        <!-- Create a container for the map. -->
+                        <div id="map"></div>
+                        </div>
+                        <script>
+
+                        // Add your Mapbox access token.
+                        mapboxgl.accessToken =
+                          "pk.eyJ1IjoiZGV2b3R0YW0xMjMiLCJhIjoiY2wyMWtqdjZrMDBzeTNjbzJqMDVscWRrciJ9.9VhfWdVo7zNSqUJoxpOzrA";
+                  
+                        const map = new mapboxgl.Map({
+                          container: "map", // HTML container ID
+                          style: "mapbox://styles/mapbox/streets-v11", // style URL
+                          center: [82, 23.8], // starting position [lng, lat]
+                          zoom: 3.8 // starting zoom
+                        });
+                        
+                        // create the popup
+                        const popup1 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/21raj.php">RAJASTHAN</a><br>Welcome to the Land of Kings. Click to see various colleges across different cities in Rajasthan.'
+                        );
+                        
+                        const popup2 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/1AP.php">ANDHRA PRADESH</a><br>Click to see various colleges across different cities in Andhra Pradesh.'
+                        );
+                        
+                        const popup3 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/2arunachalpradesh.php">ARUNACHAL PRADESH</a><br>Click to see various colleges across different cities in Arunachal Pradesh.'
+                        );
+                        
+                        const popup4 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/3Assam.php">ASSAM</a><br>The land of hills and valleys. Click to see various colleges across different cities in Assam.'
+                        );
+                        
+                        const popup5 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/4bihar.php">BIHAR</a><br>Click to see various colleges across different cities in Bihar.'
+                        );
+                        
+                        const popup6 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/5chattishgarh.php">CHHATTISGARH</a><br>Click to see various colleges across different cities in Chattisgarh.'
+                        );
+                                               
+                        const popup7 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/6Goa.php">GOA</a><br>The Land of Sun, Sand and beaches. Click to see various colleges across different cities in Goa.'
+                        );
+                        
+                        const popup8 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/7Gujarat.php">GUJARAT</a><br>A land of great contrasts, stretching from the seasonal salt deserts of the Kachchh. Click to see various colleges across different cities in Gujarat.'
+                        );
+                        
+                        const popup9 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/8Haryana.php">HARYANA</a><br>The land of Rotis. Click to see various colleges across different cities in Haryana.'
+                        );
+                        
+                        const popup10 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/9Himachalpradesh.php">HIMACHAL PRADESH</a><br>The Land of God. Click to see various colleges across different cities in Himachal Pradesh.'
+                        );
+                        
+                        const popup11 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/10Jharkhand.php">JHARKHAND</a><br>The Land of forests. Click to see various colleges across different cities in Jarkhand.'
+                        );
+                        
+                        const popup12 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/11karnataka.php">KARNATAKA</a><br>The Land of Sandalwood. Click to see various colleges across different cities in Karnataka.'
+                        );
+                        
+                        const popup13 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/12Kerala.php">KERALA</a><br>The land of coconuts. Click to see various colleges across different cities in Kerela.'
+                        );
+                        
+                        const popup14 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/13Madhyapradesh.php">MADHYA PRADESH</a><br>The Heart of India. Click to see various colleges across different cities in Madhya Pradesh.'
+                        );
+                        
+                        const popup15 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/14Maharashtra.php">MAHARASHTRA</a><br>The Land of Ganesha. Click to see various colleges across different cities in Mahrashtra.'
+                        );
+                                               
+                        const popup16 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/15Manipur.php">MANIPUR</a><br>A Jeweled land. Click to see various colleges across different cities in Manipur.'
+                        );
+                        
+                        const popup17 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/16Meghalaya.php">MEGHALAYA</a><br>Abode of clouds. Click to see various colleges across different cities in Meghalaya.'
+                        );
+                        
+                        const popup18 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/17Mizoram.php">MIZORAM</a><br>Land of the Mizos. Click to see various colleges across different cities in Mizoram.'
+                        );
+                        
+                        const popup19 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/18Nagaland.php">NAGALAND</a><br>Land of Festivals. Click to see various colleges across different cities in Nagaland.'
+                        );
+                        
+                        const popup20 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/19Odisha.php">ODISHA</a><br>The Land of Lord Jagannath. Click to see various colleges across different cities in Orissa.'
+                        );
+                        
+                        const popup21 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/20Punjab.php">PUNJAB</a><br>The land of the five rivers. Click to see various colleges across different cities in Punjab.'
+                        );
+                        
+                        const popup22 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/22Sikkim.php">SIKKIM</a><br>The Land of Peace and Tranquility. Click to see various colleges across different cities in Sikkim.'
+                        );
+                        
+                        const popup23 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/23Tamilnadu.php">TAMIL NADU</a><br>The land of Temples. Click to see various colleges across different cities in Tami Nadu.'
+                        );
+                        
+                        const popup24 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/24Telangana.php">TELANGANA</a><br>Click to see various colleges across different cities in Telangana.'
+                        );
+                        
+                        const popup25 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/25Tripura.php">TRIPURA</a><br>Nestled in the quiet lush greenery of hills, verdant valleys and transparent waterscape, Tripura is a land of plentiful myths and legends. Click to see various colleges across different cities in Tripura.'
+                        );
+                        
+                        const popup26 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/26uttarpradresh.php">UTTAR PRADESH</a><br>The rainbow land where the multi-hued Indian Culture has blossomed from times immemorial. Click to see various colleges across different cities in Uttar Pradesh.'
+                        );
+                        
+                        const popup27 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/27Uttarakhand.php">UTTARAKHAND</a><br>The land of the gods(Devbhumi). Click to see various colleges across different cities in Uttarakhand.'
+                        );
+                        
+                        const popup28 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/28Westbengal.php">WEST BENGAL</a><br>The Land of Bengal Tiger. Click to see various colleges across different cities in West Bengal.'
+                        );
+                        
+                        const popup29 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/30Jammuandkashmir.php">JAMMU AND KASHMIR</a><br>Paradise on Earth. Click to see varios colleges across different cities in Jammu and Kashmir'
+                        );
+                                               
+                        const popup30 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/31Ladakh.php">LADAKH</a><br>The Land of High Passes. Click to see various colleges across different cities in Ladakh.'
+                        );
+                        
+                         const popup31 = new mapboxgl.Popup().setHTML(
+                         '<a style="font-weight:bold;" href="stateHtml/32andamanandnicobar.php">ANDAMAN AND NICOBAR ISLANDS</a><br>Click to see various colleges across different cities in Andaman and Nicobar.'
+                         );
+                        
+                        const popup32 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/35chandigarh.php">CHANDIGARH</a><br>Click to see various colleges across different cities in Chandigarh.'
+                        );
+                        
+                         //const popup33 = new mapboxgl.Popup().setHTML(
+                          // '<a style="font-weight:bold;" href="stateHtml/3Assam.php">DADRA AND NAGAR HAVELI</a><br>Click to see various colleges across different cities in Dadra and Nagar Haveli.'
+                        // );
+                        
+                        const popup34 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/29Delhi.php">DELHI</a><br>The Capital. Click to see various colleges across different cities in Delhi.'
+                        );
+                        
+                        const popup35 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/33lakwadeep.php">LAKSHADWEEP</a><br>A hundred thousand islands. Click to see various colleges across different cities in Lakshwadeep.'
+                        );
+                        
+                        const popup36 = new mapboxgl.Popup().setHTML(
+                          '<a style="font-weight:bold;" href="stateHtml/34puducherry.php">PUDUCHERRY</a><br> Click to see various colleges across different cities in Puducherry.'
+                        );
+                                          
+                        // Create a default Marker and add it to the map.
+                        const marker1 = new mapboxgl.Marker() //Rajsthan
+                          .setLngLat([73.19541712654859, 26.970825266334444])
+                          .setPopup(popup1) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker2 = new mapboxgl.Marker() //Andhra Pradesh
+                          .setLngLat([79.36247006826613, 15.518031731859764])
+                          .setPopup(popup2) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker3 = new mapboxgl.Marker() //Arunachal Pradesh
+                          .setLngLat([94.74597906563065, 28.366798698466454])
+                          .setPopup(popup3) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker4 = new mapboxgl.Marker() //Assam
+                          .setLngLat([93.010266085950191, 26.344365676760148])
+                          .setPopup(popup4) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker5 = new mapboxgl.Marker() //Bihar
+                          .setLngLat([86.18897891863486, 25.776644626247815])
+                          .setPopup(popup5) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker6 = new mapboxgl.Marker() //Chhattisgarh
+                          .setLngLat([81.94413824411691, 21.523232174050776])
+                          .setPopup(popup6) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker7 = new mapboxgl.Marker() //Goa
+                          .setLngLat([74.05411084176941, 15.32555501076375])
+                          .setPopup(popup7) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker8 = new mapboxgl.Marker() //Gujarat
+                          .setLngLat([71.36245498891051, 23.581571482396996])
+                          .setPopup(popup8) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker9 = new mapboxgl.Marker() //Haryana
+                          .setLngLat([76.28486113172039, 29.45287597611518])
+                          .setPopup(popup9) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker10 = new mapboxgl.Marker() //Himachal Pradesh
+                          .setLngLat([77.23499535163779, 31.927406843132346])
+                          .setPopup(popup10) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker11 = new mapboxgl.Marker() //Jharkhand
+                          .setLngLat([85.11491386127159, 23.372521045390783])
+                          .setPopup(popup11) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker12 = new mapboxgl.Marker() //Karnataka
+                          .setLngLat([75.78913877747141, 14.956701650727481])
+                          .setPopup(popup12) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker13 = new mapboxgl.Marker() //Kerala
+                          .setLngLat([76.57403229381077, 10.20060196143777])
+                          .setPopup(popup13) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker14 = new mapboxgl.Marker() //Madhya Pradesh
+                          .setLngLat([78.72826437223523, 23.567287386324026])
+                          .setPopup(popup14) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker15 = new mapboxgl.Marker() //Maharashtra
+                          .setLngLat([76.35715390158055, 19.755540917127632])
+                          .setPopup(popup15) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker16 = new mapboxgl.Marker() //Manipur
+                          .setLngLat([93.76009411667218, 24.437748334538014])
+                          .setPopup(popup16) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker17 = new mapboxgl.Marker() //Meghalya
+                          .setLngLat([90.8440962818845, 25.520196495983072])
+                          .setPopup(popup17) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker18 = new mapboxgl.Marker() //Mizoram
+                          .setLngLat([92.81586608783186, 23.30767545858525])
+                          .setPopup(popup18) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker19 = new mapboxgl.Marker() //Nagaland
+                          .setLngLat([94.50992199211208, 26.1201651237309])
+                          .setPopup(popup19) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker20 = new mapboxgl.Marker() //Odisha
+                          .setLngLat([84.52593804582602, 20.23293087067117])
+                          .setPopup(popup20) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker21 = new mapboxgl.Marker() //Punjab
+                          .setLngLat([75.58634221458908, 31.02516306706555])
+                          .setPopup(popup21) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker22 = new mapboxgl.Marker() //Sikkim
+                          .setLngLat([88.42798392862414, 27.557341673630532])
+                          .setPopup(popup22) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker23 = new mapboxgl.Marker() //Tamil Nadu
+                          .setLngLat([78.68085189951518, 11.390897641088543])
+                          .setPopup(popup23) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker24 = new mapboxgl.Marker() //Telangana
+                          .setLngLat([79.01477617308154, 18.16026994211451])
+                          .setPopup(popup24) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker25 = new mapboxgl.Marker() //Tripura
+                          .setLngLat([91.81609565010893, 23.943763091447707])
+                          .setPopup(popup25) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker26 = new mapboxgl.Marker() //Uttar Pradesh
+                          .setLngLat([80.50194302585243, 27.340830296794095])
+                          .setPopup(popup26) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker27 = new mapboxgl.Marker() //Uttarakhand
+                          .setLngLat([79.20755708635181, 30.18908163166232])
+                          .setPopup(popup27) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker28 = new mapboxgl.Marker() //West Bengal
+                          .setLngLat([88.03867738481631, 23.822013417134002])
+                          .setPopup(popup28) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker29 = new mapboxgl.Marker() //Jammu and kashmir
+                          .setLngLat([75.2893067349419, 33.559705671894775])
+                          .setPopup(popup29) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker30 = new mapboxgl.Marker() //Ladakh
+                          .setLngLat([77.27783217531999, 34.00713418219158])
+                          .setPopup(popup30) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker31 = new mapboxgl.Marker() //Andaman and Nicobar Islands
+                          .setLngLat([92.65886754460576, 11.845932612251303])
+                          .setPopup(popup31) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker32 = new mapboxgl.Marker() //Chandigarh
+                          .setLngLat([76.77971417197432, 30.733440970299966])
+                          .setPopup(popup32) // sets a popup on this marker
+                          .addTo(map);
+                  
+                       // const marker33 = new mapboxgl.Marker({color: 'red'}) //Dadar and Nagar Haveli
+                         // .setLngLat([73.02000011519957, 20.26999893100681])
+                          //.setPopup(popup33) // sets a popup on this marker
+                          //.addTo(map);
+                  
+                        const marker34 = new mapboxgl.Marker() //New Delhi
+                          .setLngLat([77.2090060882868, 28.613894095321484])
+                          .setPopup(popup34) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker35 = new mapboxgl.Marker() //Lakshawdeep
+                          .setLngLat([72.64298913969947, 10.566804704096256])
+                          .setPopup(popup35) // sets a popup on this marker
+                          .addTo(map);
+                  
+                        const marker36 = new mapboxgl.Marker() //Puducherry
+                          .setLngLat([79.83064508548193, 11.934055998255616])
+                          .setPopup(popup36) // sets a popup on this marker
+                          .addTo(map);
+                  
+                       // const marker37 = new mapboxgl.Marker({color: 'red'}) //Daman and Diu
+                       //   .setLngLat([72.8500002004973, 20.426938942093003])
+                       //   .setPopup(popup37) // sets a popup on this marker
+                        //  .addTo(map);
+                  
+                        const layerList = document.getElementById("menu");
+                        const inputs = layerList.getElementsByTagName("input");
+                  
+                        for (const input of inputs) {
+                          input.onclick = (layer) => {
+                            const layerId = layer.target.id;
+                            map.setStyle("mapbox://styles/mapbox/" + layerId);
+                          };
+                        }
+                  
+                        // Add the control to the map.
+                        map.addControl(
+                          new MapboxGeocoder({
+                            accessToken: mapboxgl.accessToken,
+                            countries: "in",
+                            mapboxgl: mapboxgl,
+                          })
+                        );
+                  
+                        // Add geolocate control to the map.
+                        map.addControl(
+                          new mapboxgl.GeolocateControl({
+                            positionOptions: {
+                              enableHighAccuracy: true,
+                            },
+                            // When active the map will receive updates to the device's location as it changes.
+                            trackUserLocation: true,
+                            // Draw an arrow next to the location dot to indicate which direction the device is heading.
+                            showUserHeading: true,
+                          })
+                        );
+                        
+                        //Full screen controls
+                        map.addControl(new mapboxgl.FullscreenControl());
+                  
+                        // Add zoom and rotation controls to the map.
+                        map.addControl(new mapboxgl.NavigationControl());
+                      </script>
+                    <!-- MAP Ends here -->
+            </section>
+            <!-- map container section ends -->
+        </div>
+        <div class="dives">
+
+        
+          <footer class="footer">
+            <div class="containerr">
+                <div class="row">
+                    <!-- Team starts -->
+                    <div class="footerColTeam line">
+                        <h4>Team</h4>
+                        <div class="social-links">
+                            <!-- <ul> -->
+                            <img src="Image/DevottamC.jpeg"
+                                alt="">
+                            <img src="Image/DiveshC.jpeg"
+                                alt="">
+                            <img src="Image/AkshitaC.jpeg"
+                                alt="">
+                            <img src="Image/ArchieC.jpeg"
+                                alt="">
+                            <!-- </ul> -->
+                        </div>
+                    </div>
+                    <!-- Team ends  -->
+                     <!-- Social links -->
+                    
+                    <!-- social links Ends -->
+                    <!-- <div class="dropdown-menu for states"> -->
+                    <div class="footerColStates line">
+                        <h4>States</h4>
+                        <!-- <h6 class="dropdown-header">Dropdown header</h6> -->
+                        <!-- <a class="dropdown-item" href="#">Action</a>
+                         <a class="dropdown-item" href="#"></a> -->
+
+                         <select name="forma" onchange="location = this.value;" multiple class="form-control" id="c">
+                          <!-- <option class="t" value="https://google.com"><a href="stateHtml/21raj.php">Andaman And
+                                  Nicobar</a></option> -->
+                          <option class="t" value="stateHtml/1AP.php"><a href="stateHtml/1AP.php">Andhra Pradesh</a>
+                          </option>
+                          <option class="t" value="stateHtml/3Assam.php"><a href="stateHtml/3Assam.php">Assam</a></option>
+                          <option class="t" value="stateHtml/2arunachalpradesh.php"><a href="stateHtml/2arunachalpradesh.php">Arunachal
+                                  Pradesh</a></option>
+                          <option class="t" value="stateHtml/4bihar.php"><a href="stateHtml/4bihar.php">Bihar</a></option>
+                          <option class="t" value="stateHtml/35chandigarh.php"><a href="stateHtml/35chandigarh.php">Chandigarh</a>
+                          </option>
+                          <option class="t" value="stateHtml/5chattishgarh.php"><a href="stateHtml/5chattishgarh.php">Chhattisgarh</a>
+                          </option>
+                          <!-- <option class="t" value="stateHtml/21raj.php"><a href="stateHtml/21raj.php">Dadra And Nagar
+                                  Haveli</a></option> -->
+                          <!-- <option class="t" value="stateHtml/21raj.php"><a href="stateHtml/21raj.php">Daman And Diu</a>
+                          </option> -->
+                          <option class="t" value="stateHtml/29Delhi.php"><a href="stateHtml/29Delhi.php">Delhi</a></option>
+                          <option class="t" value="stateHtml/6Goa.php"><a href="stateHtml/6Goa.php">Goa</a></option>
+                          <option class="t" value="stateHtml/7Gujarat.php"><a href="stateHtml/7Gujarat.php">Gujarat</a>
+                          </option>
+                          <option class="t" value="stateHtml/8Haryana.php"><a href="stateHtml/8Haryana.php">Haryana</a>
+                          </option>
+                          <option class="t" value="stateHtml/9Himachalpradesh.php"><a href="stateHtml/9Himachalpradesh.php">Himachal
+                                  Pradesh</a></option>
+                          <option class="t" value="stateHtml/30Jammuandkashmir.php"><a href="stateHtml/30Jammuandkashmir.php">Jammu And
+                                  Kashmir</a></option>
+                          <option class="t" value="stateHtml/10Jharkhand.php"><a href="stateHtml/10Jharkhand.php">Jharkhand</a>
+                          </option>
+                          <option class="t" value="stateHtml/11karnataka.php"><a href="stateHtml/11karnataka.php">Karnataka</a>
+                          </option>
+                          <option class="t" value="stateHtml/12Kerala.php"><a href="stateHtml/12Kerala.php">Kerala</a>
+                          </option>
+                          <option class="t" value="stateHtml/31Ladakh.php"><a href="stateHtml/31Ladakh.php">Ladakh</a>
+                          </option>
+                          <option class="t" value="stateHtml/33lakwadeep.php"><a href="stateHtml/33lakwadeep.php">Lakshadweep</a>
+                          </option>
+                          <option class="t" value="stateHtml/13Madhyapradesh.php"><a href="stateHtml/13Madhyapradesh.php">Madhya Pradesh</a>
+                          </option>
+                          <option class="t" value="stateHtml/14Maharashtra.php"><a href="stateHtml/14Maharashtra.php">Maharashtra</a>
+                          </option>
+                          <option class="t" value="stateHtml/15Manipur.php"><a href="stateHtml/15Manipur.php">Manipur</a>
+                          </option>
+                          <option class="t" value="stateHtml/16Meghalaya.php"><a href="stateHtml/16Meghalaya.php">Meghalaya</a>
+                          </option>
+                          <option class="t" value="stateHtml/17Mizoram.php"><a href="stateHtml/17Mizoram.php">Mizoram</a>
+                          </option>
+                          <option class="t" value="stateHtml/18Nagaland.php"><a href="stateHtml/18Nagaland.php">Nagaland</a>
+                          </option>
+                          <option class="t" value="stateHtml/19Odisha.php"><a href="stateHtml/19Odisha.php">Orissa</a>
+                          </option>
+                          <option class="t" value="stateHtml/34puducherry.php"><a href="stateHtml/34puducherry.php">Puducherry</a>
+                          </option>
+                          <option class="t" value="stateHtml/20Punjabphp"><a href="stateHtml/20Punjab.php">Punjab</a>
+                          </option>
+                          <option class="t" value="stateHtml/21raj.php"><a href="stateHtml/21raj.php">Rajasthan</a>
+                          </option>
+                          <option class="t" value="stateHtml/22Sikkim.php"><a href="stateHtml/22Sikkim.php">Sikkim</a>
+                          </option>
+                          <option class="t" value="stateHtml/23Tamilnadu.php"><a href="stateHtml/23Tamilnadu.php">Tamil Nadu</a>
+                          </option>
+                          <option class="t" value="stateHtml/24Telangana.php"><a href="stateHtml/24Telangana.php">Telangana</a>
+                          </option>
+                          <option class="t" value="stateHtml/25Tripura.php"><a href="stateHtml/25Tripura.php">Tripura</a>
+                          </option>
+                          <option class="t" value="stateHtml/26uttarpradresh.php"><a href="stateHtml/26uttarpradresh.php">Uttar Pradesh</a>
+                          </option>
+                          <option class="t" value="stateHtml/27Uttarakhand.php"><a href="stateHtml/27Uttarakhand.php">Uttrakhand</a>
+                          </option>
+                          <option class="t" value="stateHtml/28Westbengal.php"><a href="stateHtml/28Westbengal.php">West Bengal</a>
+                          </option>
+                      
+                        </select>
+                    </div>
+                    <!-- dropdown menu for states ends -->
+                   
+                    <!-- vertical navbar here -->
+                    <div class="footerColNav">
+                        <ul>
+                            <li><a href="#section1">Go To Maps</a></li>
+                            <li><a href="index.html">Home</a></li>
+                            <!-- <li><a href="#">Your Universities</a></li> -->
+                            <li><a href="teamFinal.html">About Us</a></li>
+                            <li><a href="cont.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <!-- <div class="footerColSocial line">
+                     <img src="images/cmps.png" alt="">
+                  </div> -->
+                </div>
+                <!-- row ends -->
+                <!-- Copywrite starts -->
+                <div class="center2">
+                    <p>Made with &#10084;&#65039; by Team Pioneers!
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
