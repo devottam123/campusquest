@@ -321,11 +321,11 @@
           var counter = 1;
            setInterval(function(){
              document.getElementById('radio' + counter).checked = true;
-             if(counter > 4){
+             if(counter >= 4){
                counter = 1;
-               counter++;
-               }
-           }, 5000);
+              }
+              counter++;
+           }, 4000);
           
               </script>
 </div>
